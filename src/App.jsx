@@ -4,9 +4,7 @@ import ApiTestSuite from './components/api-test'
 function App() {
 
   return (
-    <>
-      <ApiTestSuite />
-    </>
+    <ApiTestSuite />
   )
 }
 
