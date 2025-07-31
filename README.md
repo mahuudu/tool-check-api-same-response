@@ -1,14 +1,11 @@
----
-name: HTML Starter
-slug: html-starter-with-analytics
-description: HTML5 template with analytics and advanced routing configuration.
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html
-relatedTemplates:
-  - nextjs-boilerplate
----
+## 🔍 API Comparison
 
-# HTML Starter
+This project supports analyzing and comparing two API requests extracted from cURL commands. The comparison includes:
 
-This is a starter HTML5 templates which is configured with Vercel Analytics (through a `script` tag), advanced routing with [Vercel Edge Middleware](https://vercel.com/docs/concepts/functions/edge-middleware), as well as some basic styles
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/html&project-name=html)
+| Field        | API #1                                | API #2                                | Difference                  |
+|--------------|----------------------------------------|----------------------------------------|-----------------------------|
+| **Method**   | `POST`                                 | `POST`                                 | ✅ No difference             |
+| **URL**      | `https://api.example.com/v1/resource`  | `https://api.example.com/v1/resource`  | ✅ No difference             |
+| **Headers**  | `Authorization: Bearer ...`            | `Authorization: Bearer ...`            | ✅ No difference             |
+| **Payload**  | `{ "a": 1, "b": 2 }`                   | `{ "a": 1, "b": 3 }`                   | `"b"` changed from 2 → 3    |
+| **Response** | `{ "status": "ok" }`                   | `{ "status": "ok" }`                   | ✅ No difference             |
