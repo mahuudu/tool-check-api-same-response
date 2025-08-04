@@ -11,6 +11,7 @@ import DataManagementModal from './DataManagementModal';
 import ControlPanel from './ControlPanel';
 import ProgressBar from './ProgressBar';
 import TokenInput from './TokenInput';
+import ApiInputModal from './ApiInputModal';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
     const [showDataModal, setShowDataModal] = useState(false);
     const [progress, setProgress] = useState(0);
     const [overrideToken, setOverrideToken] = useState('');
+    const [openJSONCom,setOpenJSONCom] = useState(false)
 
     const addNewTest = ({ groupName, keyName, curlCommand }: { groupName: string; keyName: string; curlCommand: string }) => {
         try {
@@ -156,6 +158,7 @@ const App = () => {
         setTestData(data);
     };
 
+
     const stats = {
         total: testData.length,
         success: testData.filter((t) => t.status === 'success').length,
@@ -182,6 +185,7 @@ const App = () => {
                 onExport={() => { alert('chức năng chưa có'); }}
                 onManageData={() => setShowDataModal(true)}
                 onClearAll={clearAllTests}
+                onShowCompareJson={() => setOpenJSONCom(true)}
             />
 
             <div className="grid grid-cols-4 gap-4 p-4 bg-white">
@@ -219,6 +223,8 @@ const App = () => {
             {showDataModal && (
                 <DataManagementModal tests={testData} onLoadData={loadStorageData} onClose={() => setShowDataModal(false)} />
             )}
+
+            {openJSONCom && <ApiInputModal onClose={() => setOpenJSONCom(false)} />}
         </div>
     );
 };
