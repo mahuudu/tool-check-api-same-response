@@ -14,7 +14,7 @@ const ApiInputModal = ({onClose}) => {
             const parsedJson1 = JSON.parse(json1 || '{}');
             const parsedJson2 = JSON.parse(json2 || '{}');
 
-            const testData = [
+            const testData : any = [
                 {
                     id: '1',
                     key: 'api-test',
